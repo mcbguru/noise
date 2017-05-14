@@ -1,21 +1,21 @@
 Noise
 =====
 
-Nested Object Inverted Search Engine
+Nested Object Inverted Search Engine (NOISE)
 
 This is a native library meant to be linked into other projects and will
 expose a C API.
 
 It's a full text index and query system that understands the semi structured
-nature of JSON, and will allow:
+nature of JSON supports the following search and interrogational constructs:
 
  * Stemmed word/fuzzy match
  * Case sensitive exact word and sentence match
  * Arbitrary boolean nesting
- * Greater than/less Than matching
+ * Greater than/less than numerical matching
+ * Nested object searching (in array/contains)
  
 [Query Langauge Reference here](https://github.com/pipedown/noise/blob/master/query_language_reference.md)
-
 
 Installation
 ------------
@@ -24,12 +24,17 @@ Installation
 
  * [RocksDB](http://rocksdb.org/)
  * [capnp-tool](https://capnproto.org/capnp-tool.html) 
+ * [cargo](http://doc.crates.io/guide.html) 
+ * Working GCC/G++ Compiler
 
 
 ### Build
 
     cargo build
 
+This will import a numbe of other builds and components to build the
+noise libraries. Libraries themselves are created within the /target
+direactory.
 
 ### Running tests
 
